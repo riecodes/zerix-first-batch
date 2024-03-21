@@ -1,0 +1,131 @@
+/* Switch container */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 36px;
+  height: 20px;
+}
+
+/* Hide default checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* Slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: .4s;
+  border-radius: 20px;
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 20px;
+}
+
+/* On state */
+.slider.round::before {
+  position: absolute;
+  content: "";
+  height: 16px;
+  width: 16px;
+  left: 2px;
+  bottom: 2px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+  border-radius: 50%;
+}
+
+/* Checked (on) state */
+input:checked + .slider.round {
+  background-color: #FF5400;
+}
+
+/* Rounded slider when on */
+input:checked + .slider.round::before {
+  -webkit-transform: translateX(16px);
+  -ms-transform: translateX(16px);
+  transform: translateX(16px);
+}
+
+table th, table td {
+  padding: 50px;
+}
+
+@media (max-width: 768px) {
+  .table-responsive {
+      max-height: 500px;
+      overflow-x: auto;
+      overflow-y: auto;
+    
+  } 
+  #table {
+     width: 170%;
+  }
+}
+
+
+
+  /* Custom styles */
+  .search-box {
+    margin-bottom: 20px;
+  }
+  @media (max-width: 576px) {
+    .search-box {
+      width: 100%;
+    }
+    .logo {
+      max-width: 100px; /* Adjust the maximum width for smaller devices */
+    }
+    .dashboard-text {
+      display: none; /* Hide the text "Dashboard" */
+    }
+  }
+  
+/* Popup styles */
+.popup {
+  display: none;
+  position: fixed;
+  background-color: white; /* Set popup color to white */
+  width: 248px;
+  max-height: 218px;
+  overflow-y: auto;
+  border: 1px solid #ccc;
+  z-index: 1;
+  padding: 10px;
+  top: 50%; /* Place the popup in the center vertically */
+  left: 10px; /* Place the popup 10px from the left */
+  transform: translateY(-50%); /* Adjust vertical position */
+}
+
+.popup-content ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.popup-content ul li {
+  padding: 8px 0;
+  cursor: pointer;
+}
+
+.popup-content ul li:hover {
+  background-color: #ddd;
+}
+
+/* Search box style */
+.search-box {
+  width: 95%;
+  padding: 6px;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+}

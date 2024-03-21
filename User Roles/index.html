@@ -1,0 +1,954 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/user_roles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<style>
+    * {
+    padding: 0;
+    margin: 0;
+  }
+
+/* Media query for phone view */
+@media (max-width: 767px) {
+  .popup {
+      left: 35%; /* Center the popup horizontally */
+      transform: translate(-50%, -100%); /* Adjust vertical and horizontal position */
+  }
+}
+
+  
+
+</style>
+<body>
+
+<div class="container-header">
+    <div class="container-fluid" style="margin: 0; font-size: 14px; padding: 0;">
+        <header class="header" style="width: 100%; border-bottom: 1px solid #CED4DA; padding: 17px 0;">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-md-6 col-9 d-flex align-items-center">
+                        <img src="../img/Zerix Logo.svg" alt="Zerix Logo" class="logo">
+                    </div>
+                    <div class="col-md-6 col-3 d-flex justify-content-end align-items-center">
+                        <div class="d-flex align-items-center me-3">
+                            <span class="welcome me-1 d-md-inline" style="color:#bfc1c5; font-size: 16px;">Welcome,</span>
+                            <span class="admin me-1" style="color: #FF5400; font-size: 16px;">Admin</span>
+                            <img class="pt-1 d-md-inline d-none" src="../img/arrow-down.svg" alt="">
+                        </div>
+                        <button class="btn btn-dashboard d-flex align-items-center gap-2" style="background-color: #FF5400; color: white; font-size: 16px;">
+                            <img src="../img/dashboard-icon.svg" alt="" style="width: 20px; height: auto;">
+                            <span class="dashboard-text d-md-inline d-none">Dashboard</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </header>
+    </div>
+    
+    <div class="container-fluid" style="border-bottom: 1px solid #CED4DA; padding: 25px;">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-1" style="display: flex;">
+                    <div class="box" style="border-radius: 5px; border: 1px solid #FF5400; padding: 7px; display: flex; gap: 5px; align-items: center;">
+                        <div class="container d-flex gap-3">
+                            <div class="d-flex gap-2">
+                                <img src="../img/settings.svg" alt="Settings Icon" style="width: 25px;">
+                                <p  style="color: #FF5400; margin: 0; white-space: nowrap;">Settings</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-11 d-flex justify-content-end gap-3" style="box-sizing: border-box;">
+          
+                    <!-- Hamburger menu icon for phone-sized screens -->
+                    <div class="d-flex d-sm-none align-items-center">
+                     <!-- Replace "your-hamburger-icon.svg" with your actual SVG file -->
+                     <img src="../Hamburger Menu.svg" alt="Hamburger Menu" style="width: 30px; height: 30px;">
+                 </div>
+         
+                   <div class="box d-none d-sm-flex" style="display: flex; flex-direction: column; justify-content: center; align-items: center; border: 1px solid #FF5400; width: 80px; height: 75px; border-radius: 5px; text-align: center;">
+                     <img src="../img/msg.png" alt="Message Icon" style="object-fit:contain; width: 30px; height: 30px;">
+                     <p style="color: #FF5400; margin: 0; font-size: 13px;">Messages</p>
+                   </div>
+                   <div class="box d-none d-sm-flex" style="display: flex; flex-direction: column; justify-content: center; align-items: center; border: 1px solid #FF5400; width: 80px; height: 75px; border-radius: 5px; text-align: center;">
+                       <img src="../img/key.png" alt="Keywords Icon" style="object-fit:contain; width: 30px; height: 30px;">
+                       <p style="color: #FF5400; margin: 0; font-size: 13px;">Keywords</p>
+                   </div>
+                   <div class="box d-none d-sm-flex" style="display: flex; flex-direction: column; justify-content: center; align-items: center; border: 1px solid #FF5400; width: 80px; height: 75px; border-radius: 5px; text-align: center;">
+                     <img src="../img/users.png" alt="Contacts Icon" style="object-fit:contain;width: 30px; height: 30px;">
+                     <p style="color: #FF5400; margin: 0; font-size: 13px;">Contacts</p>
+                   </div>
+                            <a href="CreateNotif.html" style="text-decoration: none;">
+                     <div class="box d-none d-sm-flex" style="display: flex; flex-direction: column; justify-content: center; align-items: center; border: 1px solid #FF5400; width: 80px; height: 75px; border-radius: 5px; text-align: center;">
+                         <img src="../img/notif.png" alt="Notifications Icon" style="object-fit:contain;width: 30px; height: 30px;">
+                         <p style="color: #FF5400; margin: 0; font-size: 13px;">Notifications</p>
+                     </div>
+                 </a>
+                   <div class="box d-none d-sm-flex" style="display: flex; flex-direction: column; justify-content: center; align-items: center; border: 1px solid #FF5400; width: 80px; height: 75px; border-radius: 5px; text-align: center;">
+                       <img src="../img/report.png" alt="Reports Icon" style="object-fit:contain;width: 30px; height: 30px;">
+                       <p style="color: #FF5400; margin: 0; font-size: 13px;">Reports</p>
+                   </div>
+                   <div class="box d-none d-sm-flex" style="display: flex; flex-direction: column; justify-content: center; align-items: center; border: 1px solid #FF5400; width: 80px; height: 75px; border-radius: 5px; text-align: center;">
+                     <img src="../img/email-address-svgrepo-com 1.png" alt="Reports Icon" style="object-fit:contain;width: 30px; height: 30px;">
+                     <p style="color: #FF5400; margin: 0; font-size: 13px;">Email</p>
+                 </div>
+                   <div class="box d-none d-sm-flex" style="display: flex; flex-direction: column; justify-content: center; align-items: center; border: 1px solid #FF5400; width: 80px; height: 75px; border-radius: 5px; text-align: center;">
+                       <img src="../img/poll.png" alt="Pollster Icon" style="object-fit:contain;width: 30px; height: 30px;">
+                       <p style="color: #FF5400;margin: 0; font-size: 13px;">Pollster</p>
+                   </div>
+                   <div class="box d-none d-sm-flex" style="display: flex; flex-direction: column; justify-content: center; align-items: center; border: 1px solid #FF5400; width: 80px; height: 75px; border-radius: 5px; text-align: center;">
+                     <img src="../img/sched.png" alt="Pollster Icon" style="object-fit:contain;width: 30px; height: 30px;">
+                     <p style="color: #FF5400;margin: 0; font-size: 13px;">Scheduler</p>
+                 </div>
+                 <div class="box d-none d-sm-flex" style="display: flex; flex-direction: column; justify-content: center; align-items: center; border: 1px solid #FF5400; width: 80px; height: 75px; border-radius: 5px; text-align: center;">
+                   <img src="../img/setting.png" alt="Pollster Icon" style="object-fit:contain;width: 30px; height: 30px;">
+                   <p style="color: #FF5400;margin: 0; font-size: 13px;">Settings</p>
+               </div>
+                   <div class="box d-none d-sm-flex" style="display: flex; flex-direction: column; justify-content: center; align-items: center; border: 1px solid #FF5400; width: 80px; height: 75px; border-radius: 5px; text-align: center;">
+                       <img src="../img/microsoft-alt-svgrepo-com 1.png" alt="Scheduler Icon" style="object-fit:contain;width: 30px; height: 30px;">
+                       <p style="color: #FF5400; margin: 0; font-size: 13px;">Others</p>
+                   </div> 
+         
+                 </div>        
+            </div>
+        </div>
+    </div>
+
+    <div class="container d-flex flex-column gap-5 py-5">
+        <div class="container d-none d-sm-block   " style="  border-bottom: 1px solid #CED4DA;">
+            <ul class="nav d-flex gap-3" style="border: none; margin: 0; padding: 0; font-size: 13px; font-weight: 500;">
+                <li class="nav-item">
+                    <a style="color: black;" class="nav-link active" href="#">Users</a>
+                </li>
+                <li class="nav-item">
+                    <a style="color: black;" class="nav-link" href="#">User Groups</a>
+                </li>
+                <li class="nav-item" style="position: relative;">
+                    <a class="nav-link active" href="#" style="display: flex; justify-content: center; color:#FF5400; border-bottom: 3px solid #FF5400; margin-bottom: -1.5px;">User Roles</a>
+                </li>
+                <li class="nav-item">
+                    <a style="color: black;" class="nav-link" href="#">System Configuration</a>
+                </li>
+                <li class="nav-item">
+                    <a style="color: black;" class="nav-link" href="#">Logs</a>
+                </li>
+            </ul>
+        </div>
+    
+  
+        <div class="col">
+            <div class="row d-flex justify-content-between gap-4">
+                <div class="col-lg-auto">
+                    <h1 id="toggleUserButton" style="margin: 0; font-size: 23px; cursor: pointer;" onclick="toggleUserPopup()">USER ROLES AND PERMISSIONS</h1>
+                </div>
+            </div>
+        </div>
+            
+        <div id="userPopup" class="popup">
+            <input type="text" placeholder="" class="search-box">
+            <div class="popup-content">
+                <ul>
+                    <li>User</li>
+                    <li>User Groups</li>
+                    <li>User Roles</li>
+                    <li>System Configuration</li>
+                    <li>Logs</li>
+                    <!-- Add more items as needed -->
+                </ul>
+            </div>
+        </div>
+
+        
+        
+        <div class="col">
+            <div class="row">
+                <div class="d-flex gap-3 flex-column flex-md-row"> <!-- Updated class here -->
+                    <div class="form-group col-md-4 col-12">
+                        <label for="roleName">Role Name</label>
+                        <input type="text" class="form-control" id="roleName">
+                    </div>
+                    <div class="form-group col-md-4 col-12">
+                        <label for="description">Description</label>
+                        <input type="text" class="form-control" id="description">
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        
+    </div>
+
+    <div class="container">    
+        <!-- Table -->
+        <div class="table-responsive">
+            <div class="row">
+                <div class="col">
+                    <table class="table" id="table" style=" border: 1px solid #CED4DA; border-bottom: #bfc1c5;" >
+                        <thead id="custom-table-header" style="background-image: linear-gradient(180deg, #ff8e32, #ed6e2e, #ff5905); color: white;">
+                            <tr class="text-center ">
+                                <th scope="col" class="col-6 col-sm-auto w-sm-75" style="font-weight: lighter;">Modules</th>
+                                <th scope="col" class="col-6 col-sm-auto" style="font-weight: lighter;">Viewing</th>
+                                <th scope="col" class="col-6 col-sm-auto" style="font-weight: lighter;">Adding</th>
+                                <th scope="col" class="col-6 col-sm-auto" style="font-weight: lighter;">Editing</th>
+                                <th scope="col" class="col-6 col-sm-auto" style="font-weight: lighter;">Deleting</th>
+                                <th scope="col" class="col-6 col-sm-auto" style="font-weight: lighter;">Manage</th>
+                            </tr>
+                        </thead>
+                        <tbody class="text-center align-middle" style="border: white;">
+                            <tr>
+                                <td>
+                                    <div class="p-2">All Features</div>
+                                </td>
+                                <td>
+                                    <div class="p-2 d-flex justify-content-center">
+                                        <label class="switch d-flex justify-content-center align-items-center gap-3">
+                                            <span class="px-3" style="margin-left: 1.8px;">Own</span>
+                                            <input type="checkbox" checked>
+                                            <span class="slider round"></span>
+                                            <span class="px-2">Group</span>
+                                        </label>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="p-2 d-flex align-items-center justify-content-center">
+                                        <label class="switch ml-2">
+                                            <input type="checkbox">
+                                            <span class="slider round"></span>
+                                        </label>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="p-2 d-flex align-items-center justify-content-center">
+                                        <label class="switch ml-2">
+                                            <input type="checkbox">
+                                            <span class="slider round"></span>
+                                        </label>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="p-2 d-flex align-items-center justify-content-center">
+                                        <label class="switch ml-2">
+                                            <input type="checkbox">
+                                            <span class="slider round"></span>
+                                        </label>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="p-2 d-flex align-items-center justify-content-center">
+                                        <label class="switch ml-2">
+                                            <input type="checkbox">
+                                            <span class="slider round"></span>
+                                        </label>
+                                    </div>
+                                </td>
+                            </tr>
+                            
+                            <tr>
+                            <div><td >Settings</td></div>
+                                <td>
+                                    <div class="p-2 d-flex justify-content-center">
+                                        <label class="switch d-flex justify-content-center align-items-center">              
+                                            <input type="checkbox" checked>
+                                            <span class="slider round"></span>
+                                        </label>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="p-2 d-flex align-items-center justify-content-center">
+                                        <label class="switch ml-2">
+                                            <input type="checkbox">
+                                            <span class="slider round"></span>
+                                        </label>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="p-2 d-flex align-items-center justify-content-center">
+                                        <label class="switch ml-2">
+                                            <input type="checkbox">
+                                            <span class="slider round"></span>
+                                        </label>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="p-2 d-flex align-items-center justify-content-center">
+                                        <label class="switch ml-2">
+                                            <input type="checkbox">
+                                            <span class="slider round"></span>
+                                        </label>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="p-2 d-flex align-items-center justify-content-center">
+                                        <label class="switch ml-2">
+                                            <input type="checkbox">
+                                            <span class="slider round"></span>
+                                        </label>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td >Contacts</td>
+                                <td>
+                                    <div class="p-2 d-flex align-items-center justify-content-center ">
+                                        <label class="switch ml-2">
+                                            <input type="checkbox" checked>
+                                            <span class="slider round"></span>
+                                        </label>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="p-2 d-flex align-items-center justify-content-center">
+                                        <label class="switch ml-2">
+                                            <input type="checkbox" checked>
+                                            <span class="slider round"></span>
+                                        </label>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="p-2 d-flex align-items-center justify-content-center">
+                                        <label class="switch ml-2">
+                                            <input type="checkbox">
+                                            <span class="slider round"></span>
+                                        </label>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="p-2 d-flex align-items-center justify-content-center">
+                                        <label class="switch ml-2">
+                                            <input type="checkbox">
+                                            <span class="slider round"></span>
+                                        </label>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="p-2 d-flex align-items-center justify-content-center">
+                                        <label class="switch ml-2">
+                                            <input type="checkbox">
+                                            <span class="slider round"></span>
+                                        </label>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td >Messages</td>
+                                <td>
+                                    <div class="p-2 d-flex align-items-center justify-content-center ">
+                                        <label class="switch ml-2">
+                                            <input type="checkbox" checked>
+                                            <span class="slider round"></span>
+                                        </label>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="p-2 d-flex align-items-center justify-content-center">
+                                        <label class="switch ml-2">
+                                            <input type="checkbox" checked>
+                                            <span class="slider round"></span>
+                                        </label>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="p-2 d-flex align-items-center justify-content-center">
+                                        <label class="switch ml-2">
+                                            <input type="checkbox">
+                                            <span class="slider round"></span>
+                                        </label>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="p-2 d-flex align-items-center justify-content-center">
+                                        <label class="switch ml-2">
+                                            <input type="checkbox">
+                                            <span class="slider round"></span>
+                                        </label>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="p-2 d-flex align-items-center justify-content-center">
+                                        <label class="switch ml-2">
+                                            <input type="checkbox">
+                                            <span class="slider round"></span>
+                                        </label>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td >Keywords</td>
+                                <td>
+                                    <div class="p-2 d-flex justify-content-center">
+                                        <label class="switch d-flex justify-content-center align-items-center">              
+                                            <input type="checkbox" checked>
+                                            <span class="slider round"></span>
+                                        </label>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="p-2 d-flex align-items-center justify-content-center">
+                                        <label class="switch ml-2">
+                                            <input type="checkbox">
+                                            <span class="slider round"></span>
+                                        </label>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="p-2 d-flex align-items-center justify-content-center">
+                                        <label class="switch ml-2">
+                                            <input type="checkbox">
+                                            <span class="slider round"></span>
+                                        </label>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="p-2 d-flex align-items-center justify-content-center">
+                                        <label class="switch ml-2">
+                                            <input type="checkbox">
+                                            <span class="slider round"></span>
+                                        </label>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="p-2 d-flex align-items-center justify-content-center">
+                                        <label class="switch ml-2">
+                                            <input type="checkbox">
+                                            <span class="slider round"></span>
+                                        </label>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td >Message Templates</td>
+                                <td>
+                                    <div class="p-2 d-flex justify-content-center">
+                                        <label class="switch d-flex justify-content-center align-items-center">              
+                                            <input type="checkbox" checked>
+                                            <span class="slider round"></span>
+                                        </label>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="p-2 d-flex align-items-center justify-content-center">
+                                        <label class="switch ml-2">
+                                            <input type="checkbox">
+                                            <span class="slider round"></span>
+                                        </label>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="p-2 d-flex align-items-center justify-content-center">
+                                        <label class="switch ml-2">
+                                            <input type="checkbox">
+                                            <span class="slider round"></span>
+                                        </label>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="p-2 d-flex align-items-center justify-content-center">
+                                        <label class="switch ml-2">
+                                            <input type="checkbox">
+                                            <span class="slider round"></span>
+                                        </label>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="p-2 d-flex align-items-center justify-content-center">
+                                        <label class="switch ml-2">
+                                            <input type="checkbox">
+                                            <span class="slider round"></span>
+                                        </label>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td >Create Notification</td>
+                                <td>
+                                    <div class="p-2 d-flex justify-content-center">
+                                        <label class="switch d-flex justify-content-center align-items-center">              
+                                            <input type="checkbox" checked>
+                                            <span class="slider round"></span>
+                                        </label>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="p-2 d-flex align-items-center justify-content-center">
+                                        <label class="switch ml-2">
+                                            <input type="checkbox">
+                                            <span class="slider round"></span>
+                                        </label>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="p-2 d-flex align-items-center justify-content-center">
+                                        <label class="switch ml-2">
+                                            <input type="checkbox">
+                                            <span class="slider round"></span>
+                                        </label>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="p-2 d-flex align-items-center justify-content-center">
+                                        <label class="switch ml-2">
+                                            <input type="checkbox">
+                                            <span class="slider round"></span>
+                                        </label>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="p-2 d-flex align-items-center justify-content-center">
+                                        <label class="switch ml-2">
+                                            <input type="checkbox">
+                                            <span class="slider round"></span>
+                                        </label>
+                                    </div>
+                                </td>                        
+                            </tr>
+                            <tr>
+                                <td >Notification</td>
+                                <td>
+                                    <div class="p-2 d-flex justify-content-center">
+                                        <label class="switch d-flex justify-content-center align-items-center">              
+                                            <input type="checkbox" checked>
+                                            <span class="slider round"></span>
+                                        </label>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="p-2 d-flex align-items-center justify-content-center">
+                                        <label class="switch ml-2">
+                                            <input type="checkbox">
+                                            <span class="slider round"></span>
+                                        </label>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="p-2 d-flex align-items-center justify-content-center">
+                                        <label class="switch ml-2">
+                                            <input type="checkbox">
+                                            <span class="slider round"></span>
+                                        </label>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="p-2 d-flex align-items-center justify-content-center">
+                                        <label class="switch ml-2">
+                                            <input type="checkbox">
+                                            <span class="slider round"></span>
+                                        </label>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="p-2 d-flex align-items-center justify-content-center">
+                                        <label class="switch ml-2">
+                                            <input type="checkbox">
+                                            <span class="slider round"></span>
+                                        </label>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td >Reports</td>
+                                <td>
+                                    <div class="p-2 d-flex justify-content-center">
+                                        <label class="switch d-flex justify-content-center align-items-center">              
+                                            <input type="checkbox" checked>
+                                            <span class="slider round"></span>
+                                        </label>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="p-2 d-flex align-items-center justify-content-center">
+                                        <label class="switch ml-2">
+                                            <input type="checkbox">
+                                            <span class="slider round"></span>
+                                        </label>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="p-2 d-flex align-items-center justify-content-center">
+                                        <label class="switch ml-2">
+                                            <input type="checkbox">
+                                            <span class="slider round"></span>
+                                        </label>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="p-2 d-flex align-items-center justify-content-center">
+                                        <label class="switch ml-2">
+                                            <input type="checkbox">
+                                            <span class="slider round"></span>
+                                        </label>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="p-2 d-flex align-items-center justify-content-center">
+                                        <label class="switch ml-2">
+                                            <input type="checkbox">
+                                            <span class="slider round"></span>
+                                        </label>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td >Logs</td>
+                                <td>
+                                    <div class="p-2 d-flex justify-content-center">
+                                        <label class="switch d-flex justify-content-center align-items-center">              
+                                            <input type="checkbox" checked>
+                                            <span class="slider round"></span>
+                                        </label>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="p-2 d-flex align-items-center justify-content-center">
+                                        <label class="switch ml-2">
+                                            <input type="checkbox">
+                                            <span class="slider round"></span>
+                                        </label>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="p-2 d-flex align-items-center justify-content-center">
+                                        <label class="switch ml-2">
+                                            <input type="checkbox">
+                                            <span class="slider round"></span>
+                                        </label>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="p-2 d-flex align-items-center justify-content-center">
+                                        <label class="switch ml-2">
+                                            <input type="checkbox">
+                                            <span class="slider round"></span>
+                                        </label>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="p-2 d-flex align-items-center justify-content-center">
+                                        <label class="switch ml-2">
+                                            <input type="checkbox">
+                                            <span class="slider round"></span>
+                                        </label>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td >Pollster</td>
+                                <td>
+                                    <div class="p-2 d-flex justify-content-center">
+                                        <label class="switch d-flex justify-content-center align-items-center">              
+                                            <input type="checkbox" checked>
+                                            <span class="slider round"></span>
+                                        </label>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="p-2 d-flex align-items-center justify-content-center">
+                                        <label class="switch ml-2">
+                                            <input type="checkbox">
+                                            <span class="slider round"></span>
+                                        </label>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="p-2 d-flex align-items-center justify-content-center">
+                                        <label class="switch ml-2">
+                                            <input type="checkbox">
+                                            <span class="slider round"></span>
+                                        </label>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="p-2 d-flex align-items-center justify-content-center">
+                                        <label class="switch ml-2">
+                                            <input type="checkbox">
+                                            <span class="slider round"></span>
+                                        </label>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="p-2 d-flex align-items-center justify-content-center">
+                                        <label class="switch ml-2">
+                                            <input type="checkbox">
+                                            <span class="slider round"></span>
+                                        </label>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td >Scheduler</td>
+                                <td>
+                                    <div class="p-2 d-flex justify-content-center">
+                                        <label class="switch d-flex justify-content-center align-items-center">              
+                                            <input type="checkbox" checked>
+                                            <span class="slider round"></span>
+                                        </label>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="p-2 d-flex align-items-center justify-content-center">
+                                        <label class="switch ml-2">
+                                            <input type="checkbox">
+                                            <span class="slider round"></span>
+                                        </label>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="p-2 d-flex align-items-center justify-content-center">
+                                        <label class="switch ml-2">
+                                            <input type="checkbox">
+                                            <span class="slider round"></span>
+                                        </label>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="p-2 d-flex align-items-center justify-content-center">
+                                        <label class="switch ml-2">
+                                            <input type="checkbox">
+                                            <span class="slider round"></span>
+                                        </label>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="p-2 d-flex align-items-center justify-content-center">
+                                        <label class="switch ml-2">
+                                            <input type="checkbox">
+                                            <span class="slider round"></span>
+                                        </label>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td >API</td>
+                                <td>
+                                    <div class="p-2 d-flex justify-content-center">
+                                        <label class="switch d-flex justify-content-center align-items-center">              
+                                            <input type="checkbox" checked>
+                                            <span class="slider round"></span>
+                                        </label>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="p-2 d-flex align-items-center justify-content-center">
+                                        <label class="switch ml-2">
+                                            <input type="checkbox">
+                                            <span class="slider round"></span>
+                                        </label>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="p-2 d-flex align-items-center justify-content-center">
+                                        <label class="switch ml-2">
+                                            <input type="checkbox">
+                                            <span class="slider round"></span>
+                                        </label>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="p-2 d-flex align-items-center justify-content-center">
+                                        <label class="switch ml-2">
+                                            <input type="checkbox">
+                                            <span class="slider round"></span>
+                                        </label>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="p-2 d-flex align-items-center justify-content-center">
+                                        <label class="switch ml-2">
+                                            <input type="checkbox">
+                                            <span class="slider round"></span>
+                                        </label>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td >Users</td>
+                                <td>
+                                    <div class="p-2 d-flex justify-content-center">
+                                        <label class="switch d-flex justify-content-center align-items-center">              
+                                            <input type="checkbox" checked>
+                                            <span class="slider round"></span>
+                                        </label>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="p-2 d-flex align-items-center justify-content-center">
+                                        <label class="switch ml-2">
+                                            <input type="checkbox">
+                                            <span class="slider round"></span>
+                                        </label>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="p-2 d-flex align-items-center justify-content-center">
+                                        <label class="switch ml-2">
+                                            <input type="checkbox">
+                                            <span class="slider round"></span>
+                                        </label>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="p-2 d-flex align-items-center justify-content-center">
+                                        <label class="switch ml-2">
+                                            <input type="checkbox">
+                                            <span class="slider round"></span>
+                                        </label>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="p-2 d-flex align-items-center justify-content-center">
+                                        <label class="switch ml-2">
+                                            <input type="checkbox">
+                                            <span class="slider round"></span>
+                                        </label>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td >Groups</td>
+                                <td>
+                                    <div class="p-2 d-flex justify-content-center">
+                                        <label class="switch d-flex justify-content-center align-items-center">              
+                                            <input type="checkbox" checked>
+                                            <span class="slider round"></span>
+                                        </label>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="p-2 d-flex align-items-center justify-content-center">
+                                        <label class="switch ml-2">
+                                            <input type="checkbox">
+                                            <span class="slider round"></span>
+                                        </label>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="p-2 d-flex align-items-center justify-content-center">
+                                        <label class="switch ml-2">
+                                            <input type="checkbox">
+                                            <span class="slider round"></span>
+                                        </label>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="p-2 d-flex align-items-center justify-content-center">
+                                        <label class="switch ml-2">
+                                            <input type="checkbox">
+                                            <span class="slider round"></span>
+                                        </label>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="p-2 d-flex align-items-center justify-content-center">
+                                        <label class="switch ml-2">
+                                            <input type="checkbox">
+                                            <span class="slider round"></span>
+                                        </label>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td >Roles</td>
+                                <td>
+                                    <div class="p-2 d-flex justify-content-center">
+                                        <label class="switch d-flex justify-content-center align-items-center">              
+                                            <input type="checkbox" checked>
+                                            <span class="slider round"></span>
+                                        </label>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="p-2 d-flex align-items-center justify-content-center">
+                                        <label class="switch ml-2">
+                                            <input type="checkbox">
+                                            <span class="slider round"></span>
+                                        </label>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="p-2 d-flex align-items-center justify-content-center">
+                                        <label class="switch ml-2">
+                                            <input type="checkbox">
+                                            <span class="slider round"></span>
+                                        </label>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="p-2 d-flex align-items-center justify-content-center">
+                                        <label class="switch ml-2">
+                                            <input type="checkbox">
+                                            <span class="slider round"></span>
+                                        </label>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="p-2 d-flex align-items-center justify-content-center">
+                                        <label class="switch ml-2">
+                                            <input type="checkbox">
+                                            <span class="slider round"></span>
+                                        </label>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr style="border: #bfc1c5;">
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="d-flex justify-content-end gap-3 pb-3">
+                        <!-- Cancel Button -->
+                        <button type="button" class="btn" style="border-color: #FF5400; color: #FF5400;">Cancel</button>
+                        
+                        <!-- Save Button -->
+                        <button type="button" class="btn" style="background-color: #FF5400; color: white;">Save</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script
+	src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+	integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+	crossorigin="anonymous"
+></script>
+
+<script
+	src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+	integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+	crossorigin="anonymous"
+></script>
+
+<script>
+    // Get the popup
+    var popup = document.getElementById("userPopup");
+    
+    // Get the button that opens the popup
+    var userButton = document.getElementById("toggleUserButton");
+    
+    // When the user clicks anywhere outside of the popup, close it
+    window.onclick = function(event) {
+      if (event.target !== userButton && event.target !== popup) {
+        popup.style.display = "none";
+      }
+    }
+    
+    // Function to toggle the user popup
+    function toggleUserPopup() {
+      if (popup.style.display === "none" || popup.style.display === "") {
+        popup.style.display = "block";
+      } else {
+        popup.style.display = "none";
+      }
+    }
+    </script>
+</body>
+</html>
