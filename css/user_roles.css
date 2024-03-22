@@ -4,6 +4,7 @@
   display: inline-block;
   width: 36px;
   height: 20px;
+  
 }
 
 /* Hide default checkbox */
@@ -16,19 +17,23 @@
 /* Slider */
 .slider {
   position: absolute;
+  
   cursor: pointer;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: #ccc;
+  background-color: white; /* Change background to white */
   transition: .4s;
   border-radius: 20px;
+  border: 1px solid #ccc; /* Add border to the slider */
+
 }
 
 /* Rounded sliders */
 .slider.round {
   border-radius: 20px;
+  
 }
 
 /* On state */
@@ -39,12 +44,14 @@
   width: 16px;
   left: 2px;
   bottom: 2px;
-  background-color: white;
+  top: 1px;
+  background-color: #ccc; /* Change circle color to gray */
   -webkit-transition: .4s;
   transition: .4s;
   border-radius: 50%;
 }
 
+/* Checked (on) state */
 /* Checked (on) state */
 input:checked + .slider.round {
   background-color: #FF5400;
@@ -55,7 +62,9 @@ input:checked + .slider.round::before {
   -webkit-transform: translateX(16px);
   -ms-transform: translateX(16px);
   transform: translateX(16px);
+  background-color: white; /* Change circle color to white when checked */
 }
+
 
 table th, table td {
   padding: 50px;
