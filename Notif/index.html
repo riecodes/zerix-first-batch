@@ -48,18 +48,33 @@
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-1" style="display: flex;">
-                    <div class="box" style="border-radius: 5px; border: 1px solid #FF5400; padding: 7px; display: flex; gap: 5px; align-items: center;">
-                        <div class="container d-flex gap-3">
-                            <div class="d-flex gap-2">
-                                <img src="../img/notifications-icon.svg" alt="Settings Icon" style="width: 25px;">
-                                <p class="text-center" style="color: #FF5400; margin: 0; white-space: nowrap;">List of Notifications</p>
-                            </div>
-                            <div class="d-flex">                                
-                                <img class="" src="../img/arrow-down.svg" alt="">
-                            </div>
-                        </div>
+                    <div class="box" style="position: relative;">
+                      <div class="selected-option"
+                        style="border-radius: 5px; border: 1px solid #FF5400; padding: 7px; display: flex; gap: 5px; align-items: center; cursor: pointer;">
+                        <img src="../img/notifications-icon.svg" alt="Settings Icon" style="width: 25px;">
+                        <p class="text-center" style="color: #FF5400; margin: 0; width: 150px;">List of Notifications</p>
+                        <!-- Keep the angle-down icon visible -->
+                        <i class="fas fa-angle-down" style="color: #FF5400;"></i>
+                      </div>
+                  
+                      <!-- Dropdown menu -->
+                      <div class="dropdown-menu"
+                        style="position: absolute; top: 100%; left: 0; border: 1px solid #FF5400; border-top: none; border-radius: 0 0 5px 5px; display: none; z-index: 100; width: 100%; max-height: 50px;">
+                        <ul style="list-style-type: none; padding: 0;">
+                          <li class="dropdown-item"
+                            style="border-radius: 5px; padding: 7px; display: flex; gap: 5px; align-items: center; cursor: pointer; width: 100%;">
+                            <a href="../CreateNotif.html"
+                              style="text-decoration: none; color: inherit; display: flex; align-items: center; width: 100%;">
+                              <img src="../img/notif.png" alt="Settings Icon" style="width: 25px;">
+                              <p class="text-center" style="color: #FF5400; margin: 0; width: 162px;">Create Notifications</p>
+                            </a>
+                          </li>
+                          <!-- Add more list items as needed -->
+                        </ul>
+                      </div>
+                  
                     </div>
-                </div>
+                  </div>
                 <div class="col-11 d-flex justify-content-end gap-3" style="box-sizing: border-box;">
           
                     <!-- Hamburger menu icon for phone-sized screens -->
@@ -80,7 +95,7 @@
                      <img src="../img/users.png" alt="Contacts Icon" style="object-fit:contain;width: 30px; height: 30px;">
                      <p style="color: #FF5400; margin: 0; font-size: 13px;">Contacts</p>
                    </div>
-                            <a href="CreateNotif.html" style="text-decoration: none;">
+                            <a href="../CreateNotif.html" style="text-decoration: none;">
                      <div class="box d-none d-sm-flex" style="display: flex; flex-direction: column; justify-content: center; align-items: center; border: 1px solid #FF5400; width: 80px; height: 75px; border-radius: 5px; text-align: center;">
                          <img src="../img/notif.png" alt="Notifications Icon" style="object-fit:contain;width: 30px; height: 30px;">
                          <p style="color: #FF5400; margin: 0; font-size: 13px;">Notifications</p>
@@ -265,35 +280,19 @@
     </div>
 
 </div>
-
-	
-	
-
-	
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-	
+<script>
+    // JavaScript to toggle the visibility of the dropdown menu
+    const angleDownIcon = document.querySelector('.fa-angle-down');
+    const dropdownMenu = document.querySelector('.dropdown-menu');
+  
+    angleDownIcon.addEventListener('click', function() {
+        if (dropdownMenu.style.display === 'none') {
+            dropdownMenu.style.display = 'block';
+        } else {
+            dropdownMenu.style.display = 'none';
+        }
+    });
+  </script>
 </body>
 <script
 	src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
